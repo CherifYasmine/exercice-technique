@@ -6,6 +6,7 @@ var cardRouter = require("./routes/Card")
 var columnRouter = require("./routes/Column")
 const app = express();
 dotenv.config();
+mongoose.set('strictQuery', true);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -25,5 +26,4 @@ mongoose.connect(process.env.CONNECTION_URL, {
 })
     .then(() => app.listen(PORT, () => console.log(`Connected to database and running on port ${PORT}`)))
     .catch((error) => console.log(error));
- mongoose.set('strictQuery', false);
 module.exports = app;
