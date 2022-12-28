@@ -1,7 +1,7 @@
 
 In this project directory, you can run:
 
-### `npm install`
+### `npm install --legacy-peer-deps`
 installs the dependencies needed for the project
 
 then run: 
