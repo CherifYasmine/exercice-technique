@@ -3,11 +3,11 @@
 To run the backend:
 
 create .env file inside api folder and add this content to it:
-````
+```
 CONNECTION_URL=mongodb+srv://admin:admin@kanban.3yd9rnv.mongodb.net/?retryWrites=true&w=majority
 PORT=5000
 ```
-
+then run
 ```
 cd api
 npm install --save
