@@ -35,6 +35,8 @@ router.post("/", async (req, res) => {
             status: columnn.name
         });
         const savedCard = await card.save();
+
+        
         const column = await Column.findByIdAndUpdate({_id: columnId}, {
             $push: {
                 cards: savedCard,

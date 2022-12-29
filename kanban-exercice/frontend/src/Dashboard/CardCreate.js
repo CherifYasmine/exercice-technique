@@ -65,7 +65,7 @@ const styles = {
     },
     saveBtn: {
         marginTop : '100%',
-        marginLeft: '50%',
+        marginLeft: '20%',
         display: 'block',
         width: 200
     },

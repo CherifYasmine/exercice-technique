@@ -67,14 +67,14 @@ const styles = {
     },
     saveBtn: {
         marginTop : '100%',
-        marginLeft: '50%',
+        marginLeft: '45%',
         display: 'block',
-        width: 200
+        width: 180
     },
     deleteBtn: {
         marginTop: '-16%',
-        marginLeft: 12,
-        width: 180
+        width: 150,
+        marginRight: 30
     },
     infos: {
         marginTop:30

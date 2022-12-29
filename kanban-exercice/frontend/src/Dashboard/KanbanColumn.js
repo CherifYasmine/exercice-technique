@@ -49,9 +49,15 @@ function KanbanColumn({ columnId, index }) {
             </IconButton>
             </div>
             {
-                column?.cards?.map((card) => (
-                    <div key={card}><CardCol cardId={card} /></div>
-                ))
+                column?.cards?.map((card) => {
+                    if(!card || card!==null) {
+                        return(
+                            <div key={card}><CardCol cardId={card} /></div>
+                        )
+                    }
+                    return null
+                }
+                )
             }
             <Button onClick={handleOpen} style={styles.newBtn}> + New </Button>
             <Modal
