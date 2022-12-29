@@ -26,11 +26,13 @@ router.get("/:cardId", async (req, res) => {
 router.post("/", async (req, res) => {
     try {
         const { name, description, assignee, columnId  } = req.body;
-
+        const columnn = await Column.findById(columnId);
+        console.log(columnn);
         const card = new Card({
             name: name,
             description: description,
             assignee: assignee,
+            status: columnn.name
         });
         const savedCard = await card.save();
         const column = await Column.findByIdAndUpdate({_id: columnId}, {

@@ -13,6 +13,10 @@ const cardSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    status: {
+        type: String,
+        required: true,
+    }
 });
 
 const Card = mongoose.model("Card", cardSchema);
