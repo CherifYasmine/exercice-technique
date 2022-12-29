@@ -8,7 +8,7 @@ import Card from './Card';
 function CardCol({ cardId }) {
     const [card, setCard] = useState({})
     const [open, setOpen] = React.useState(false);
-
+    const [showDesc, setShowDesc] = useState(false)
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
     useEffect(() => {
@@ -22,8 +22,14 @@ function CardCol({ cardId }) {
         return (
             <div>
                 <Button onClick={handleOpen} style={styles.cardBtn} variant="outlined">
-                    {card?.name}
+                    {card?.name}                    
                 </Button>
+                {
+                        showDesc ?
+                        <button style={styles.note} onClick={()=>setShowDesc(!showDesc)}>{card.description}</button>
+                        :
+                        <button style={styles.note} onClick={()=>setShowDesc(true)}>Show note</button>
+                    }
                 <Modal
                     open={open}
                     onClose={handleClose}
@@ -43,13 +49,19 @@ const styles = {
         marginTop: 10,
         // marginLeft: -170,
         width: '100%',
-        height: 40,
+        minHeight: 40,
         color: 'black',
         borderColor: 'black'
     },
     deleteIcon: {
         color: 'black',
         marginLeft: 70
+    },
+    note: {
+        color: 'grey',
+        fontSize: 12,
+        backgroundColor: 'transparent',
+        border: 'none'
     }
 }
 export default CardCol;
