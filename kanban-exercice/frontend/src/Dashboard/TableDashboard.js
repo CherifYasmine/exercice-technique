@@ -7,19 +7,24 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import React, { useState, useEffect } from 'react'
 import { getCards, getColumns } from '../apiCalls';
+import Loader from '../Loader';
 
 function TableDashboard() {
     const [cards, setcards] = useState([])
     const [columns, setColumns] = useState([])
+    const [loading, setLoading] = useState(true)
+
     useEffect(() => {
         getCards().then(function (response) {
             setcards(response.data)
         });
         getColumns().then(function (response) {
             setColumns(response.data)
-    });
+            setLoading(false)
+        });
     }, [cards, columns])
     return (
+        loading ? <Loader /> :
         <div style={styles.container}>
         <TableContainer  component={Paper}>
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
