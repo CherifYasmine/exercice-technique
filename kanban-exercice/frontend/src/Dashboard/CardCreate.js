@@ -4,20 +4,19 @@ import Box from '@mui/material/Box';
 import {BsFillPeopleFill} from 'react-icons/bs';
 import {RiLoader2Fill} from 'react-icons/ri'
 import { Button } from '@mui/material';
-import { deleteCard, updateCard } from '../apiCalls';
-function Card ({card}) {
-    const [name, setName] = useState(card.name)
-    const [description, setDescription] = useState(card.description)
+import { addCard } from '../apiCalls';
+function CardCreate ({columnId}) {
+    const [name, setName] = useState("")
+    const [description, setDescription] = useState("")
     const saveChanges = async () => {
-        await updateCard({cardId: card._id, name: name, description: description}).then((response)=>window.location.reload())
-    }
-    const dropCard = async () => {
-        await deleteCard(card._id).then((response)=>window.location.reload())
+        await addCard({name: name, description: description, columnId:columnId, assignee: 'none'})
+        .then((response)=>window.location.reload())
+        .catch(err=>console.error(err))
     }
  return(
     <div>
         <Box sx={styles.box}>
-            <input style={styles.title} name='name' value={name} onChange={(e)=>setName(e.target.value)} />
+            <input style={styles.title} placeholder='Add a name...' name='name' value={name} onChange={(e)=>setName(e.target.value)} />
             <hr />
             <div style={styles.infos}>
                 <BsFillPeopleFill color='grey'/>
@@ -33,7 +32,6 @@ function Card ({card}) {
             
 
             <Button style={styles.saveBtn} variant="contained" onClick={saveChanges} >Save Changes</Button>
-            <Button style={styles.deleteBtn} variant="outlined" onClick={dropCard} >Delete Card</Button>
         </Box>
     </div>
  )
@@ -88,4 +86,4 @@ const styles = {
         marginLeft: 30,
     }
 }
-export default Card;
+export default CardCreate;

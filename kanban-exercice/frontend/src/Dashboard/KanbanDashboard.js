@@ -23,12 +23,11 @@ import { getColumns, addColumn } from '../apiCalls';
  }
   return (
     <div style={styles.div}>
-      <hr />
       <div style={styles.container}>
         {
-            columns.map((column)=>(
+            columns.map((column, index)=>(
                 <div style={styles.column} key={column._id}>
-                  <KanbanColumn columnId={column._id} />
+                  <KanbanColumn index={index} columnId={column._id} />
                 </div>
             ))
         }

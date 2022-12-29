@@ -8,6 +8,13 @@ export const getColumns = async () => {
     })
 }
 
+export const getCards = async () => {
+    return await axios({
+        method: 'get',
+        url: api + 'card/'
+    })
+}
+
 export const addColumn = async (data) => {
     return await axios.post('http://localhost:5000/column', data)
 }
@@ -32,6 +39,13 @@ export const getCard = async (cardId) => {
         url: api + 'card/'+ cardId
     })
 }
+export const addCard = async (data) => {
+    return await axios.post(api + 'card/', data)
+}
+export const updateCard = async (data) => {
+    return await axios.put(api + 'card/', data)
+}
+
 export const deleteCard = async (cardId) => {
     return await axios.delete(api + 'card/' + cardId)
 }
