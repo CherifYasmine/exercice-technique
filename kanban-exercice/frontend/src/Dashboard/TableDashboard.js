@@ -27,6 +27,7 @@ function TableDashboard() {
                     <TableRow style={{backgroundColor: '#5290cc'}}>
                         <TableCell style={styles.colTitle}>Task Name</TableCell>
                         <TableCell style={styles.colTitle} align="left">Task Description</TableCell>
+                        <TableCell style={styles.colTitle} align="left">Assignee</TableCell>
                         <TableCell style={styles.colTitle} align="left">Status</TableCell>
                     </TableRow>
                 </TableHead>
@@ -40,8 +41,9 @@ function TableDashboard() {
                                 {row.name}
                             </TableCell>
                             <TableCell align="left">{row.description}</TableCell>
+                            <TableCell align="left">{row.assignee}</TableCell>
                             <TableCell align="left">
-                               
+                               {row.status}
 
                             </TableCell>
                         </TableRow>

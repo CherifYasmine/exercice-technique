@@ -22,12 +22,12 @@ function Card ({card}) {
             <div style={styles.infos}>
                 <BsFillPeopleFill color='grey'/>
                 <span style={styles.assignTitle}>Assign</span>
-                <span style={styles.assignee}>Empty</span>
+                <span style={styles.assignee}>{card.assignee}</span>
             </div>
             <div style={styles.infos}>
                 <RiLoader2Fill color='grey'/>
                 <span style={styles.assignTitle}>Status</span>
-                <span style={styles.assignee}>Not Started</span>
+                <span style={styles.assignee}>{card.status}</span>
             </div>
             <input style={styles.desc} placeholder='Add a description...' name='description' value={description} onChange={(e)=>setDescription(e.target.value)} />
             
