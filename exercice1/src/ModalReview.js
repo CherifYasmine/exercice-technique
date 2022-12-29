@@ -65,7 +65,7 @@ export default function ModalReview() {
             showConfetti && 
             <Confetti/>
           }
-          <button style={{ width: 200, height: 60, marginTop: '20%', marginLeft: '40%'}} type="button" onClick={handleOpen}>
+          <button style={{border: "1px solid #a9a9a9", borderColor: 'green', width: 200, height: 60, marginTop: '20%', marginLeft: '40%'}} type="button" onClick={handleOpen}>
             <h4 style={{fontSize : 15}}>Review Noota</h4>
           </button>
           <Modal

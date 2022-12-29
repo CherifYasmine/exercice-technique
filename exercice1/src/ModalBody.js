@@ -125,9 +125,11 @@ const styles = {
         border: "1px solid #a9a9a9",
         borderRadius: 5,
         width: 300,
+        height: 60,
         padding: 10,
         marginTop: 30,
-        borderColor: 'green'
+        borderColor: 'green',
+        marginLeft: 20
     }
 
 };
