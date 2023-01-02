@@ -31,6 +31,7 @@ function CardCol({ cardId }) {
                         <button style={styles.note} onClick={()=>setShowDesc(true)}>Show note</button>
                     }
                 <Modal
+                    sx={{width: 500,}}
                     open={open}
                     onClose={handleClose}
                     aria-labelledby="modal-modal-title"

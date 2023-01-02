@@ -3,6 +3,7 @@ import KanbanColumn from './KanbanColumn';
 import Button from '@mui/material/Button';
 import { getColumns, addColumn } from '../apiCalls';
 import Loader from '../Loader';
+import { Grid } from '@mui/material';
 
 function KanbanDashboard() {
 
@@ -32,7 +33,7 @@ function KanbanDashboard() {
     :
  
     <div style={styles.div}>
-    <div style={styles.container}>
+    <Grid sx={styles.container}  spacing={8} container>
       {
         columns.map((column, index) => (
           <div style={styles.column} key={column._id}>
@@ -47,7 +48,7 @@ function KanbanDashboard() {
         </div>
       }
       <Button onClick={() => setPlusClicked(!plusClicked)} style={styles.plusIcon}>+</Button>
-    </div>
+    </Grid>
   </div>
 
   );
@@ -57,15 +58,16 @@ const styles = {
   container: {
     display: 'flex',
     flexDirection: 'row',
-    marginTop: 30,
-    marginLeft: 50
+    marginTop: 5,
+    // marginLeft: 50
   },
   div: {
     margin: 40,
   },
   column: {
     marginLeft: 40,
-    marginRight: 40
+    marginRight: 40,
+    marginTop: 20
   },
   plusIcon: {
     fontSize: 20,
