@@ -38,11 +38,6 @@ function CardCreate ({columnId}) {
 }
 const styles = {
     box: {
-        position: 'absolute',
-        top: '50%',
-        left: '50%',
-        transform: 'translate(90%, -50%)',
-        width: 400,
         height: '100%',
         bgcolor: 'background.paper',
         border: '2px solid #000',

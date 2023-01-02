@@ -65,6 +65,7 @@ function KanbanColumn({ columnId, index }) {
                     onClose={handleClose}
                     aria-labelledby="modal-modal-title"
                     aria-describedby="modal-modal-description"
+                    sx={{        width: 500, }}
                 >
                     <CardCreate columnId={columnId} />
                 </Modal>
